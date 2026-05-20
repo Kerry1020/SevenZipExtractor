@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A00000110000000000000001 /* SevenZipExtractorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000001 /* SevenZipExtractorApp.swift */; };
+		A00000110000000000000002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000002 /* AppDelegate.swift */; };
+		A00000110000000000000003 /* LaunchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000003 /* LaunchMode.swift */; };
+		A00000110000000000000004 /* AppLaunchSmokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000004 /* AppLaunchSmokeTests.swift */; };
+		A00000110000000000000005 /* ArchiveFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000005 /* ArchiveFormat.swift */; };
+		A00000110000000000000006 /* ExtractionPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000006 /* ExtractionPreferences.swift */; };
+		A00000110000000000000007 /* ExtractionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000007 /* ExtractionRequest.swift */; };
+		A00000110000000000000008 /* ExtractionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000008 /* ExtractionResult.swift */; };
+		A00000110000000000000009 /* ArchiveProbe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000009 /* ArchiveProbe.swift */; };
+		A0000011000000000000000A /* MultiVolumeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000000A /* MultiVolumeInfo.swift */; };
+		A0000011000000000000000B /* ExtractionPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000000B /* ExtractionPreferencesTests.swift */; };
+		A0000011000000000000000C /* PreferencesStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000000C /* PreferencesStoreTests.swift */; };
+		A0000011000000000000000D /* PreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000000D /* PreferencesStore.swift */; };
+		A0000011000000000000000E /* KeychainPasswordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000000E /* KeychainPasswordStore.swift */; };
+		A0000011000000000000000F /* SevenZipBackendProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000000F /* SevenZipBackendProtocol.swift */; };
+		A00000110000000000000010 /* SevenZipToolLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000010 /* SevenZipToolLocator.swift */; };
+		A00000110000000000000011 /* SevenZipCommandBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000011 /* SevenZipCommandBuilder.swift */; };
+		A00000110000000000000012 /* SevenZipCommandBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000012 /* SevenZipCommandBuilderTests.swift */; };
+			A00000110000000000000013 /* SevenZipOutputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000013 /* SevenZipOutputParser.swift */; };
+			A00000110000000000000014 /* SevenZipOutputParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000014 /* SevenZipOutputParserTests.swift */; };
+			A00000110000000000000015 /* SevenZipBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000015 /* SevenZipBackend.swift */; };
+			A00000110000000000000016 /* SevenZipBackendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000016 /* SevenZipBackendTests.swift */; };
+			A00000110000000000000017 /* DestinationResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000017 /* DestinationResolver.swift */; };
+			A00000110000000000000018 /* ConflictPolicyResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000018 /* ConflictPolicyResolver.swift */; };
+			A00000110000000000000019 /* DestinationResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000019 /* DestinationResolverTests.swift */; };
+			A0000011000000000000001A /* ConflictPolicyResolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000001A /* ConflictPolicyResolverTests.swift */; };
+			A0000011000000000000001B /* ExtractionCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000001B /* ExtractionCoordinatorTests.swift */; };
+			A0000011000000000000001C /* ExtractionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000001C /* ExtractionCoordinator.swift */; };
+			A0000011000000000000001D /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000001D /* AppDelegateTests.swift */; };
+			A0000011000000000000001E /* CompletionActionRunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000001E /* CompletionActionRunnerTests.swift */; };
+			A0000011000000000000001F /* CompletionActionRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000001F /* CompletionActionRunner.swift */; };
+			A00000110000000000000020 /* PasswordPromptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000020 /* PasswordPromptController.swift */; };
+			A00000110000000000000021 /* ConflictPromptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000021 /* ConflictPromptController.swift */; };
+			A00000110000000000000022 /* ErrorAlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000022 /* ErrorAlertPresenter.swift */; };
+			A00000110000000000000023 /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000023 /* SettingsViewModelTests.swift */; };
+			A0000011000000000000002A /* NativePromptControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000002B /* NativePromptControllerTests.swift */; };
+			A00000110000000000000024 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000024 /* SettingsView.swift */; };
+			A00000110000000000000025 /* BindingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000025 /* BindingsSectionView.swift */; };
+			A00000110000000000000026 /* ExtractionSettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000026 /* ExtractionSettingsSectionView.swift */; };
+			A00000110000000000000027 /* BundleConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000027 /* BundleConfigurationTests.swift */; };
+			A00000110000000000000028 /* 7zz in Resources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000028 /* 7zz */; };
+			A00000110000000000000029 /* SevenZipBackendIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000002A /* SevenZipBackendIntegrationTests.swift */; };
+			/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A00000210000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000010000000000000001;
+			remoteInfo = SevenZipExtractor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A00000030000000000000001 /* SevenZipExtractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SevenZipExtractor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000030000000000000002 /* SevenZipExtractorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SevenZipExtractorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00001010000000000000001 /* SevenZipExtractorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipExtractorApp.swift; sourceTree = "<group>"; };
+		A00001010000000000000002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A00001010000000000000003 /* LaunchMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchMode.swift; sourceTree = "<group>"; };
+		A00001010000000000000004 /* AppLaunchSmokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchSmokeTests.swift; sourceTree = "<group>"; };
+		A00001010000000000000005 /* ArchiveFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveFormat.swift; sourceTree = "<group>"; };
+		A00001010000000000000006 /* ExtractionPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractionPreferences.swift; sourceTree = "<group>"; };
+		A00001010000000000000007 /* ExtractionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractionRequest.swift; sourceTree = "<group>"; };
+		A00001010000000000000008 /* ExtractionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractionResult.swift; sourceTree = "<group>"; };
+		A00001010000000000000009 /* ArchiveProbe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveProbe.swift; sourceTree = "<group>"; };
+		A0000101000000000000000A /* MultiVolumeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiVolumeInfo.swift; sourceTree = "<group>"; };
+		A0000101000000000000000B /* ExtractionPreferencesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractionPreferencesTests.swift; sourceTree = "<group>"; };
+		A0000101000000000000000C /* PreferencesStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStoreTests.swift; sourceTree = "<group>"; };
+		A0000101000000000000000D /* PreferencesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesStore.swift; sourceTree = "<group>"; };
+		A0000101000000000000000E /* KeychainPasswordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordStore.swift; sourceTree = "<group>"; };
+		A0000101000000000000000F /* SevenZipBackendProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipBackendProtocol.swift; sourceTree = "<group>"; };
+		A00001010000000000000010 /* SevenZipToolLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipToolLocator.swift; sourceTree = "<group>"; };
+		A00001010000000000000011 /* SevenZipCommandBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipCommandBuilder.swift; sourceTree = "<group>"; };
+		A00001010000000000000012 /* SevenZipCommandBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipCommandBuilderTests.swift; sourceTree = "<group>"; };
+			A00001010000000000000013 /* SevenZipOutputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipOutputParser.swift; sourceTree = "<group>"; };
+			A00001010000000000000014 /* SevenZipOutputParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipOutputParserTests.swift; sourceTree = "<group>"; };
+			A00001010000000000000015 /* SevenZipBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipBackend.swift; sourceTree = "<group>"; };
+			A00001010000000000000016 /* SevenZipBackendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipBackendTests.swift; sourceTree = "<group>"; };
+			A00001010000000000000017 /* DestinationResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationResolver.swift; sourceTree = "<group>"; };
+			A00001010000000000000018 /* ConflictPolicyResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConflictPolicyResolver.swift; sourceTree = "<group>"; };
+			A00001010000000000000019 /* DestinationResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationResolverTests.swift; sourceTree = "<group>"; };
+			A0000101000000000000001A /* ConflictPolicyResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConflictPolicyResolverTests.swift; sourceTree = "<group>"; };
+			A0000101000000000000001B /* ExtractionCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractionCoordinatorTests.swift; sourceTree = "<group>"; };
+			A0000101000000000000001C /* ExtractionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractionCoordinator.swift; sourceTree = "<group>"; };
+			A0000101000000000000001D /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
+			A0000101000000000000001E /* CompletionActionRunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionActionRunnerTests.swift; sourceTree = "<group>"; };
+			A0000101000000000000001F /* CompletionActionRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionActionRunner.swift; sourceTree = "<group>"; };
+			A00001010000000000000020 /* PasswordPromptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPromptController.swift; sourceTree = "<group>"; };
+			A00001010000000000000021 /* ConflictPromptController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConflictPromptController.swift; sourceTree = "<group>"; };
+			A00001010000000000000022 /* ErrorAlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertPresenter.swift; sourceTree = "<group>"; };
+			A00001010000000000000023 /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipExtractorTests/UI/SettingsViewModelTests.swift; sourceTree = SOURCE_ROOT; };
+			A0000101000000000000002B /* NativePromptControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipExtractorTests/UI/NativePromptControllerTests.swift; sourceTree = SOURCE_ROOT; };
+			A00001010000000000000024 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipExtractor/UI/Settings/SettingsView.swift; sourceTree = SOURCE_ROOT; };
+			A00001010000000000000025 /* BindingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipExtractor/UI/Settings/BindingsSectionView.swift; sourceTree = SOURCE_ROOT; };
+			A00001010000000000000026 /* ExtractionSettingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipExtractor/UI/Settings/ExtractionSettingsSectionView.swift; sourceTree = SOURCE_ROOT; };
+			A00001010000000000000027 /* BundleConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleConfigurationTests.swift; sourceTree = "<group>"; };
+			A00001010000000000000028 /* 7zz */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = 7zz; sourceTree = "<group>"; };
+			A00001010000000000000029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SevenZipExtractor/Info.plist; sourceTree = SOURCE_ROOT; };
+			A0000101000000000000002A /* SevenZipBackendIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipBackendIntegrationTests.swift; sourceTree = "<group>"; };
+			/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A00000070000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000070000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00000040000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				A00000040000000000000002 /* SevenZipExtractor */,
+				A00000040000000000000004 /* SevenZipExtractorTests */,
+				A00000040000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A00000040000000000000002 /* SevenZipExtractor */ = {
+			isa = PBXGroup;
+			children = (
+				A00000040000000000000005 /* App */,
+				A00000040000000000000007 /* Domain */,
+				A0000004000000000000000A /* Preferences */,
+				A0000004000000000000000B /* Backend */,
+				A0000004000000000000000D /* Orchestration */,
+				A00000040000000000000014 /* Packaging */,
+				A00000040000000000000011 /* UI */,
+				A00001010000000000000029 /* Info.plist */,
+			);
+			path = SevenZipExtractor;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A00000030000000000000001 /* SevenZipExtractor.app */,
+				A00000030000000000000002 /* SevenZipExtractorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000004 /* SevenZipExtractorTests */ = {
+			isa = PBXGroup;
+			children = (
+				A00000040000000000000006 /* Smoke */,
+				A0000004000000000000000F /* App */,
+				A00000040000000000000008 /* Domain */,
+				A00000040000000000000009 /* Preferences */,
+				A0000004000000000000000C /* Backend */,
+				A0000004000000000000000E /* Orchestration */,
+				A00000040000000000000010 /* UI */,
+			);
+			path = SevenZipExtractorTests;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000005 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A00001010000000000000001 /* SevenZipExtractorApp.swift */,
+				A00001010000000000000002 /* AppDelegate.swift */,
+				A00001010000000000000003 /* LaunchMode.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000006 /* Smoke */ = {
+			isa = PBXGroup;
+			children = (
+				A00001010000000000000004 /* AppLaunchSmokeTests.swift */,
+			);
+			path = Smoke;
+			sourceTree = "<group>";
+		};
+		A0000004000000000000000F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A0000101000000000000001D /* AppDelegateTests.swift */,
+				A00001010000000000000027 /* BundleConfigurationTests.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000007 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A00001010000000000000005 /* ArchiveFormat.swift */,
+				A00001010000000000000009 /* ArchiveProbe.swift */,
+				A00001010000000000000006 /* ExtractionPreferences.swift */,
+				A00001010000000000000007 /* ExtractionRequest.swift */,
+				A00001010000000000000008 /* ExtractionResult.swift */,
+				A0000101000000000000000A /* MultiVolumeInfo.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A0000004000000000000000A /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				A0000101000000000000000D /* PreferencesStore.swift */,
+				A0000101000000000000000E /* KeychainPasswordStore.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		A0000004000000000000000B /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				A0000101000000000000000F /* SevenZipBackendProtocol.swift */,
+				A00001010000000000000010 /* SevenZipToolLocator.swift */,
+				A00001010000000000000011 /* SevenZipCommandBuilder.swift */,
+				A00001010000000000000013 /* SevenZipOutputParser.swift */,
+				A00001010000000000000015 /* SevenZipBackend.swift */,
+			);
+			path = Backend;
+			sourceTree = "<group>";
+		};
+		A0000004000000000000000D /* Orchestration */ = {
+			isa = PBXGroup;
+			children = (
+				A00001010000000000000017 /* DestinationResolver.swift */,
+				A00001010000000000000018 /* ConflictPolicyResolver.swift */,
+				A0000101000000000000001C /* ExtractionCoordinator.swift */,
+				A0000101000000000000001F /* CompletionActionRunner.swift */,
+			);
+			path = Orchestration;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000008 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A0000101000000000000000B /* ExtractionPreferencesTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000009 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				A0000101000000000000000C /* PreferencesStoreTests.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		A0000004000000000000000C /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				A00001010000000000000012 /* SevenZipCommandBuilderTests.swift */,
+				A00001010000000000000014 /* SevenZipOutputParserTests.swift */,
+				A00001010000000000000016 /* SevenZipBackendTests.swift */,
+					A0000101000000000000002A /* SevenZipBackendIntegrationTests.swift */,
+			);
+			path = Backend;
+			sourceTree = "<group>";
+		};
+		A0000004000000000000000E /* Orchestration */ = {
+			isa = PBXGroup;
+			children = (
+				A00001010000000000000019 /* DestinationResolverTests.swift */,
+				A0000101000000000000001A /* ConflictPolicyResolverTests.swift */,
+				A0000101000000000000001B /* ExtractionCoordinatorTests.swift */,
+			);
+			path = Orchestration;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000010 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A0000101000000000000001E /* CompletionActionRunnerTests.swift */,
+				A00001010000000000000023 /* SettingsViewModelTests.swift */,
+				A0000101000000000000002B /* NativePromptControllerTests.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000011 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A00000040000000000000013 /* Settings */,
+				A00000040000000000000012 /* Prompts */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000012 /* Prompts */ = {
+			isa = PBXGroup;
+			children = (
+				A00001010000000000000020 /* PasswordPromptController.swift */,
+				A00001010000000000000021 /* ConflictPromptController.swift */,
+				A00001010000000000000022 /* ErrorAlertPresenter.swift */,
+			);
+			path = Prompts;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000013 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A00001010000000000000024 /* SettingsView.swift */,
+				A00001010000000000000025 /* BindingsSectionView.swift */,
+				A00001010000000000000026 /* ExtractionSettingsSectionView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000014 /* Packaging */ = {
+			isa = PBXGroup;
+			children = (
+				A00000040000000000000015 /* Resources */,
+			);
+			path = Packaging;
+			sourceTree = "<group>";
+		};
+		A00000040000000000000015 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A00001010000000000000028 /* 7zz */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00000010000000000000001 /* SevenZipExtractor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000090000000000000001 /* Build configuration list for PBXNativeTarget "SevenZipExtractor" */;
+			buildPhases = (
+				A00000050000000000000001 /* Sources */,
+				A00000070000000000000001 /* Frameworks */,
+				A00000060000000000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SevenZipExtractor;
+			productName = SevenZipExtractor;
+			productReference = A00000030000000000000001 /* SevenZipExtractor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A00000020000000000000001 /* SevenZipExtractorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000090000000000000002 /* Build configuration list for PBXNativeTarget "SevenZipExtractorTests" */;
+			buildPhases = (
+				A00000050000000000000002 /* Sources */,
+				A00000070000000000000002 /* Frameworks */,
+				A00000060000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A00000220000000000000001 /* PBXTargetDependency */,
+			);
+			name = SevenZipExtractorTests;
+			productName = SevenZipExtractorTests;
+			productReference = A00000030000000000000002 /* SevenZipExtractorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					A00000010000000000000001 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					A00000020000000000000001 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = A00000010000000000000001;
+					};
+				};
+			};
+			buildConfigurationList = A00000090000000000000003 /* Build configuration list for PBXProject "SevenZipExtractor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A00000040000000000000001;
+			productRefGroup = A00000040000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A00000010000000000000001 /* SevenZipExtractor */,
+				A00000020000000000000001 /* SevenZipExtractorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A00000060000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000110000000000000028 /* 7zz in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000060000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A00000050000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000110000000000000001 /* SevenZipExtractorApp.swift in Sources */,
+				A00000110000000000000002 /* AppDelegate.swift in Sources */,
+				A00000110000000000000003 /* LaunchMode.swift in Sources */,
+				A00000110000000000000005 /* ArchiveFormat.swift in Sources */,
+				A00000110000000000000009 /* ArchiveProbe.swift in Sources */,
+				A00000110000000000000006 /* ExtractionPreferences.swift in Sources */,
+				A00000110000000000000007 /* ExtractionRequest.swift in Sources */,
+				A00000110000000000000008 /* ExtractionResult.swift in Sources */,
+				A0000011000000000000000A /* MultiVolumeInfo.swift in Sources */,
+				A0000011000000000000000F /* SevenZipBackendProtocol.swift in Sources */,
+				A00000110000000000000010 /* SevenZipToolLocator.swift in Sources */,
+				A00000110000000000000011 /* SevenZipCommandBuilder.swift in Sources */,
+					A00000110000000000000013 /* SevenZipOutputParser.swift in Sources */,
+					A00000110000000000000015 /* SevenZipBackend.swift in Sources */,
+				A00000110000000000000017 /* DestinationResolver.swift in Sources */,
+				A00000110000000000000018 /* ConflictPolicyResolver.swift in Sources */,
+				A0000011000000000000001C /* ExtractionCoordinator.swift in Sources */,
+				A0000011000000000000001F /* CompletionActionRunner.swift in Sources */,
+				A00000110000000000000020 /* PasswordPromptController.swift in Sources */,
+				A00000110000000000000021 /* ConflictPromptController.swift in Sources */,
+				A00000110000000000000022 /* ErrorAlertPresenter.swift in Sources */,
+				A00000110000000000000024 /* SettingsView.swift in Sources */,
+				A00000110000000000000025 /* BindingsSectionView.swift in Sources */,
+				A00000110000000000000026 /* ExtractionSettingsSectionView.swift in Sources */,
+				A0000011000000000000000D /* PreferencesStore.swift in Sources */,
+				A0000011000000000000000E /* KeychainPasswordStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000050000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000110000000000000004 /* AppLaunchSmokeTests.swift in Sources */,
+				A0000011000000000000001D /* AppDelegateTests.swift in Sources */,
+				A0000011000000000000000B /* ExtractionPreferencesTests.swift in Sources */,
+				A0000011000000000000000C /* PreferencesStoreTests.swift in Sources */,
+				A00000110000000000000012 /* SevenZipCommandBuilderTests.swift in Sources */,
+					A00000110000000000000014 /* SevenZipOutputParserTests.swift in Sources */,
+					A00000110000000000000016 /* SevenZipBackendTests.swift in Sources */,
+					A00000110000000000000029 /* SevenZipBackendIntegrationTests.swift in Sources */,
+				A00000110000000000000019 /* DestinationResolverTests.swift in Sources */,
+				A0000011000000000000001A /* ConflictPolicyResolverTests.swift in Sources */,
+				A0000011000000000000001B /* ExtractionCoordinatorTests.swift in Sources */,
+				A0000011000000000000001E /* CompletionActionRunnerTests.swift in Sources */,
+				A00000110000000000000023 /* SettingsViewModelTests.swift in Sources */,
+				A0000011000000000000002A /* NativePromptControllerTests.swift in Sources */,
+				A00000110000000000000027 /* BundleConfigurationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A00000220000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A00000010000000000000001 /* SevenZipExtractor */;
+			targetProxy = A00000210000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A00000080000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A00000080000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A00000080000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SevenZipExtractor/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingion.SevenZipExtractor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A00000080000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SevenZipExtractor/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingion.SevenZipExtractor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A00000080000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"@loader_path/../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingion.SevenZipExtractorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SevenZipExtractor.app/Contents/MacOS/SevenZipExtractor";
+			};
+			name = Debug;
+		};
+		A00000080000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"@loader_path/../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingion.SevenZipExtractorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SevenZipExtractor.app/Contents/MacOS/SevenZipExtractor";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00000090000000000000001 /* Build configuration list for PBXNativeTarget "SevenZipExtractor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000080000000000000003 /* Debug */,
+				A00000080000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000090000000000000002 /* Build configuration list for PBXNativeTarget "SevenZipExtractorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000080000000000000005 /* Debug */,
+				A00000080000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000090000000000000003 /* Build configuration list for PBXProject "SevenZipExtractor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000080000000000000001 /* Debug */,
+				A00000080000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00000000000000000000001 /* Project object */;
+}

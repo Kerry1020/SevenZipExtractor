@@ -1,0 +1,8 @@
+.worktrees/
+build/
+.task10_completion_test.log
+.task10_completion_test_after_impl.log
+.task10_completion_test_after_mainactor.log
+.task10_completion_test_final.log
+.task12_bundle_test_green.log
+.task12_bundle_test_red.log
