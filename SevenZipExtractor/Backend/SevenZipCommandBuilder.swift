@@ -25,7 +25,8 @@ struct SevenZipCommandBuilder {
         var arguments = [
             "x",
             archiveURL.path,
-            "-o\(destinationURL.path)"
+            "-o\(destinationURL.path)",
+            "-y"          // assume Yes on all queries (e.g. large archive warnings)
         ]
 
         if let overwriteFlag = overwriteFlag(for: conflictPolicy) {
