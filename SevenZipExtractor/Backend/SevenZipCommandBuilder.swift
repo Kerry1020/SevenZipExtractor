@@ -44,14 +44,12 @@ struct SevenZipCommandBuilder {
 
     private func overwriteFlag(for conflictPolicy: ConflictPolicy) -> String? {
         switch conflictPolicy {
-        case .ask:
-            return nil
+        case .ask, .autoRename:
+            return "-aou"
         case .skipAll:
             return "-aos"
         case .replaceAll:
             return "-aoa"
-        case .autoRename:
-            return "-aou"
         }
     }
 }
