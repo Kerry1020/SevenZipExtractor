@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-PROJECT_ROOT="/Users/lingion/SevenZipExtractor"
+PROJECT_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PROJECT_PATH="$PROJECT_ROOT/SevenZipExtractor.xcodeproj"
 SCHEME="SevenZipExtractor"
 BUILD_ROOT="$PROJECT_ROOT/build"

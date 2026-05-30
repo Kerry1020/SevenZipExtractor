@@ -1,50 +1,5 @@
 import Foundation
 
-struct ProcessOutput {
-    let stdout: String
-    let stderr: String
-    let exitCode: Int32
-}
-
-protocol ProcessRunning {
-    func run(_ command: ProcessCommand) async throws -> ProcessOutput
-}
-
-struct ProcessRunner: ProcessRunning {
-    func run(_ command: ProcessCommand) async throws -> ProcessOutput {
-        let process = Process()
-        let stdoutPipe = Pipe()
-        let stderrPipe = Pipe()
-
-        process.executableURL = command.executableURL
-        process.arguments = command.arguments
-        process.standardOutput = stdoutPipe
-        process.standardError = stderrPipe
-
-        try process.run()
-        process.waitUntilExit()
-
-        let stdoutData = stdoutPipe.fileHandleForReading.readDataToEndOfFile()
-        let stderrData = stderrPipe.fileHandleForReading.readDataToEndOfFile()
-
-        return ProcessOutput(
-            stdout: String(decoding: stdoutData, as: UTF8.self),
-            stderr: String(decoding: stderrData, as: UTF8.self),
-            exitCode: process.terminationStatus
-        )
-    }
-}
-
-struct StubProcessRunner: ProcessRunning {
-    let stdout: String
-    let stderr: String
-    let exitCode: Int32
-
-    func run(_ command: ProcessCommand) async throws -> ProcessOutput {
-        ProcessOutput(stdout: stdout, stderr: stderr, exitCode: exitCode)
-    }
-}
-
 final class SevenZipBackend: SevenZipBackendProtocol {
     private let builder: SevenZipCommandBuilder
     private let runner: ProcessRunning
@@ -68,13 +23,16 @@ final class SevenZipBackend: SevenZipBackendProtocol {
         password: String?,
         conflictPolicy: ConflictPolicy
     ) async throws -> ExtractionResult {
-        let output = try await runner.run(
+        let output = try await runner.runWithProgress(
             builder.extractCommand(
                 archiveURL: archiveURL,
                 destinationURL: destinationURL,
                 password: password,
                 conflictPolicy: conflictPolicy
-            )
+            ),
+            onProgress: { [weak self] progress in
+                self?.onProgress?(progress)
+            }
         )
 
         if output.exitCode == 0 {
@@ -82,5 +40,12 @@ final class SevenZipBackend: SevenZipBackendProtocol {
         }
 
         return .failure(parser.parseExtractFailure(output.stdout + output.stderr))
+    }
+
+    /// Called when the backend runner supports progress; set by the coordinator.
+    var onProgress: ((ExtractionProgress) -> Void)?
+
+    func cancel() {
+        runner.cancel()
     }
 }

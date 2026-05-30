@@ -122,21 +122,23 @@ final class ExtractionCoordinator {
             password = enteredPassword
         }
 
-        var result = try await backend.extractArchive(
-            at: url,
-            to: destination,
+        // Extract with progress
+        var result = try await extractWithProgress(
+            archiveURL: url,
+            destinationURL: destination,
             password: password,
             conflictPolicy: preferences.conflictPolicy
         )
 
+        // Retry with password if needed
         if case .failure(.passwordRequired) = result, probe.needsPassword != true {
             guard let enteredPassword = try await prompts.requestPassword(for: url) else {
                 return .failure(.cancelled)
             }
 
-            result = try await backend.extractArchive(
-                at: url,
-                to: destination,
+            result = try await extractWithProgress(
+                archiveURL: url,
+                destinationURL: destination,
                 password: enteredPassword,
                 conflictPolicy: preferences.conflictPolicy
             )
@@ -144,6 +146,45 @@ final class ExtractionCoordinator {
 
         if case .success(let success) = result {
             completionRunner.run(for: success, action: preferences.completionAction)
+        }
+
+        return result
+    }
+
+    private func extractWithProgress(
+        archiveURL: URL,
+        destinationURL: URL,
+        password: String?,
+        conflictPolicy: ConflictPolicy
+    ) async throws -> ExtractionResult {
+        let progressWin = await ExtractionProgressWindow()
+        let (onProgress, _) = await progressWin.show(archiveName: archiveURL.lastPathComponent)
+
+        if let backend = backend as? SevenZipBackend {
+            backend.onProgress = onProgress
+        }
+
+        var result: ExtractionResult
+        do {
+            result = try await backend.extractArchive(
+                at: archiveURL,
+                to: destinationURL,
+                password: password,
+                conflictPolicy: conflictPolicy
+            )
+        } catch {
+            await progressWin.close()
+            throw error
+        }
+
+        let isCancelled = await progressWin.viewModel?.cancelled ?? false
+        await progressWin.close()
+
+        if isCancelled {
+            if let backend = backend as? SevenZipBackend {
+                backend.cancel()
+            }
+            return .failure(.cancelled)
         }
 
         return result

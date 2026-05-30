@@ -48,6 +48,8 @@
 			A00000110000000000000026 /* ExtractionSettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000026 /* ExtractionSettingsSectionView.swift */; };
 			A00000110000000000000027 /* BundleConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000027 /* BundleConfigurationTests.swift */; };
 			A00000110000000000000028 /* 7zz in Resources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000028 /* 7zz */; };
+		A00000110000000000000029 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000029 /* AppIcon.icns */; };
+		A00000110000000000000029 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = A00001010000000000000029 /* AppIcon.icns */; };
 			A00000110000000000000029 /* SevenZipBackendIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000101000000000000002A /* SevenZipBackendIntegrationTests.swift */; };
 			/* End PBXBuildFile section */
 
@@ -105,6 +107,8 @@
 			A00001010000000000000026 /* ExtractionSettingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipExtractor/UI/Settings/ExtractionSettingsSectionView.swift; sourceTree = SOURCE_ROOT; };
 			A00001010000000000000027 /* BundleConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleConfigurationTests.swift; sourceTree = "<group>"; };
 			A00001010000000000000028 /* 7zz */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = 7zz; sourceTree = "<group>"; };
+		A00001010000000000000029 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = archive.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		A00001010000000000000029 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = archive.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 			A00001010000000000000029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SevenZipExtractor/Info.plist; sourceTree = SOURCE_ROOT; };
 			A0000101000000000000002A /* SevenZipBackendIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenZipBackendIntegrationTests.swift; sourceTree = "<group>"; };
 			/* End PBXFileReference section */
@@ -334,6 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				A00001010000000000000028 /* 7zz */,
+				A00001010000000000000029 /* AppIcon.icns */,
+				A00001010000000000000029 /* AppIcon.icns */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00000110000000000000028 /* 7zz in Resources */,
+				A00000110000000000000029 /* AppIcon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
