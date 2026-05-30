@@ -36,7 +36,7 @@ struct ExtractionPreferences: Codable, Hashable {
     static let defaultValue = ExtractionPreferences(
         enabledFormats: [.sevenZip, .zip, .rar, .tar, .gz, .bz2, .xz, .tgz, .tarGz],
         destination: .sameDirectory,
-        conflictPolicy: .ask,
+        conflictPolicy: .autoRename,
         passwordStorage: .doNotSave,
         completionAction: .doNothing,
         showMultiVolumeGuidance: true

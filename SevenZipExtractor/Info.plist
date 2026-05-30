@@ -17,6 +17,10 @@
             <array>
                 <string>org.7-zip.7z-archive</string>
             </array>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>7z</string>
+            </array>
         </dict>
         <dict>
             <key>CFBundleTypeName</key>
@@ -28,6 +32,10 @@
             <key>LSItemContentTypes</key>
             <array>
                 <string>com.pkware.zip-archive</string>
+            </array>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>zip</string>
             </array>
         </dict>
         <dict>
@@ -41,6 +49,10 @@
             <array>
                 <string>com.rarlab.rar-archive</string>
             </array>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>rar</string>
+            </array>
         </dict>
         <dict>
             <key>CFBundleTypeName</key>
@@ -52,6 +64,10 @@
             <key>LSItemContentTypes</key>
             <array>
                 <string>public.tar-archive</string>
+            </array>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>tar</string>
             </array>
         </dict>
         <dict>
@@ -65,6 +81,10 @@
             <array>
                 <string>org.gnu.gnu-zip-archive</string>
             </array>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>gz</string>
+            </array>
         </dict>
         <dict>
             <key>CFBundleTypeName</key>
@@ -73,9 +93,9 @@
             <string>Viewer</string>
             <key>LSHandlerRank</key>
             <string>Alternate</string>
-            <key>LSItemContentTypes</key>
+            <key>CFBundleTypeExtensions</key>
             <array>
-                <string>public.bzip2-archive</string>
+                <string>bz2</string>
             </array>
         </dict>
         <dict>
@@ -85,21 +105,21 @@
             <string>Viewer</string>
             <key>LSHandlerRank</key>
             <string>Alternate</string>
-            <key>LSItemContentTypes</key>
+            <key>CFBundleTypeExtensions</key>
             <array>
-                <string>org.tukaani.xz-archive</string>
+                <string>xz</string>
             </array>
         </dict>
         <dict>
             <key>CFBundleTypeName</key>
-            <string>Archive</string>
+            <string>TGZ Archive</string>
             <key>CFBundleTypeRole</key>
             <string>Viewer</string>
             <key>LSHandlerRank</key>
             <string>Alternate</string>
-            <key>LSItemContentTypes</key>
+            <key>CFBundleTypeExtensions</key>
             <array>
-                <string>public.archive</string>
+                <string>tgz</string>
             </array>
         </dict>
     </array>
