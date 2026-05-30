@@ -21,6 +21,16 @@ final class ErrorAlertPresenter {
     }
 
     func present(failure: ExtractionFailure, details: String?) {
+        if Thread.isMainThread {
+            presentOnMain(failure: failure, details: details)
+        } else {
+            DispatchQueue.main.sync {
+                self.presentOnMain(failure: failure, details: details)
+            }
+        }
+    }
+
+    private func presentOnMain(failure: ExtractionFailure, details: String?) {
         let alert = NSAlert()
         alert.alertStyle = .warning
         alert.messageText = message(for: failure)
