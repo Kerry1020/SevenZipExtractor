@@ -14,9 +14,14 @@ final class BundleConfigurationTests: XCTestCase {
         let contentTypes = documentTypes
             .flatMap { $0["LSItemContentTypes"] as? [String] ?? [] }
 
-        XCTAssertTrue(contentTypes.contains("com.lingion.SevenZipExtractor.archive.7z"))
-        XCTAssertTrue(contentTypes.contains("com.lingion.SevenZipExtractor.archive.zip"))
-        XCTAssertTrue(contentTypes.contains("com.lingion.SevenZipExtractor.archive.rar"))
+        // Use Apple's standard LaunchServices archive UTIs rather than
+        // custom com.lingion.SevenZipExtractor.archive.* ones — registering
+        // a custom UTI would also require UTExportedTypeDeclarations in
+        // Info.plist, and Apple already ships canonical types that Finder
+        // and `open` recognize.
+        XCTAssertTrue(contentTypes.contains("org.7-zip.7z-archive"))
+        XCTAssertTrue(contentTypes.contains("com.pkware.zip-archive"))
+        XCTAssertTrue(contentTypes.contains("com.rarlab.rar-archive"))
     }
 
     private var appBundle: Bundle {

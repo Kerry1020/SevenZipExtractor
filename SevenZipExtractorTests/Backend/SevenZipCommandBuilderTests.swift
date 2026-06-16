@@ -40,9 +40,11 @@ final class SevenZipCommandBuilderTests: XCTestCase {
         )
 
         XCTAssertEqual(command.executableURL, toolURL)
+        // -y (assume Yes on all queries) is always prepended; -aoa then
+        // forces overwrite on top. See SevenZipCommandBuilder.swift:29.
         XCTAssertEqual(
             command.arguments,
-            ["x", archiveURL.path, "-o\(destinationURL.path)", "-aoa", "-psecret"]
+            ["x", archiveURL.path, "-o\(destinationURL.path)", "-y", "-aoa", "-psecret"]
         )
     }
 
@@ -58,6 +60,13 @@ final class SevenZipCommandBuilderTests: XCTestCase {
             conflictPolicy: .ask
         )
 
-        XCTAssertEqual(command.arguments, ["x", archiveURL.path, "-o\(destinationURL.path)"])
+        // -y is always prepended; .ask maps to -aou (auto-rename, treat
+        // collision as a rename rather than a blocking prompt, because
+        // the 7zz process has no TTY in this app). See
+        // SevenZipCommandBuilder.swift:48-49.
+        XCTAssertEqual(
+            command.arguments,
+            ["x", archiveURL.path, "-o\(destinationURL.path)", "-y", "-aou"]
+        )
     }
 }

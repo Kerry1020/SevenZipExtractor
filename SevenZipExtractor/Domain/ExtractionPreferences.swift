@@ -36,7 +36,11 @@ struct ExtractionPreferences: Codable, Hashable {
     static let defaultValue = ExtractionPreferences(
         enabledFormats: [.sevenZip, .zip, .rar, .tar, .gz, .bz2, .xz, .tgz, .tarGz],
         destination: .sameDirectory,
-        conflictPolicy: .autoRename,
+        // .ask maps to -aou in SevenZipCommandBuilder (auto-rename on
+        // collision). We keep .ask as the *intent* the user selected
+        // (let the extractor decide per-file), and the builder resolves
+        // it to a non-blocking 7zz flag since the 7zz process has no TTY.
+        conflictPolicy: .ask,
         passwordStorage: .doNotSave,
         completionAction: .doNothing,
         showMultiVolumeGuidance: true

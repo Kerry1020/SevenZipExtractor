@@ -52,6 +52,24 @@ private final class LockedData<T> {
     }
 }
 
+/// Ensures a closure runs exactly once across concurrent callers.
+/// Guards against Process.terminationHandler firing more than once
+/// (which can happen on some macOS versions and races) and against
+/// the `if !process.isRunning` fast-path re-entering after the
+/// handler has already resumed the CheckedContinuation.
+private final class ResumeOnce {
+    private var fired = false
+    private let lock = NSLock()
+
+    func run(_ block: () -> Void) {
+        lock.lock()
+        let shouldFire = !fired
+        if shouldFire { fired = true }
+        lock.unlock()
+        if shouldFire { block() }
+    }
+}
+
 /// Manages a single 7zz process with optional progress reporting and cancellation.
 final class ProcessRunner: ProcessRunning {
     private var activeProcess: Process?
@@ -121,12 +139,18 @@ final class ProcessRunner: ProcessRunning {
 
         try process.run()
 
+        // Race-safe: terminationHandler can fire more than once on some macOS
+        // versions, and `if !process.isRunning` can race with it. Without this
+        // guard, CheckedContinuation.resume is called twice → Swift runtime
+        // fatal "resumed more than once" → process crash (visible when
+        // extracting a second copy of the same archive with overlapping files).
+        let resumeOnce = ResumeOnce()
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             process.terminationHandler = { _ in
-                continuation.resume(returning: ())
+                resumeOnce.run { continuation.resume(returning: ()) }
             }
             if !process.isRunning {
-                continuation.resume(returning: ())
+                resumeOnce.run { continuation.resume(returning: ()) }
             }
         }
 
