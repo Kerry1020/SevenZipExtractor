@@ -65,7 +65,7 @@ Before preparing release, the following checks passed locally:
 
 ## Limitations
 
-This v1 release is intentionally narrow:
+The published releases (v1.0.0, v2.0.0) are intentionally narrow in scope:
 
 - no archive browsing UI
 - no notarization or code signing workflow yet
