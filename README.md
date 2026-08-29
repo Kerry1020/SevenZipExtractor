@@ -33,11 +33,11 @@ That means:
 
 ## Local development
 
-Run the full test suite:
+Run the full test suite (paths are relative to the repo root):
 
 ```bash
 xcodebuild test \
-  -project "/Users/lingion/SevenZipExtractor/SevenZipExtractor.xcodeproj" \
+  -project "SevenZipExtractor.xcodeproj" \
   -scheme "SevenZipExtractor" \
   -destination "platform=macOS"
 ```
@@ -45,13 +45,13 @@ xcodebuild test \
 Build an unsigned release package:
 
 ```bash
-bash "/Users/lingion/SevenZipExtractor/scripts/package-unsigned.sh"
+bash scripts/package-unsigned.sh
 ```
 
-This creates:
+The script derives the project root from its own location, so it can run from any checkout. Output lands in:
 
 ```text
-/Users/lingion/SevenZipExtractor/build/SevenZipExtractor-unsigned-macos.zip
+build/SevenZipExtractor-unsigned-macos.zip
 ```
 
 ## Verified status
@@ -73,4 +73,4 @@ This v1 release is intentionally narrow:
 
 ## License
 
-No license has been added yet.
+This project is licensed under the GNU General Public License v3.0 — see the [LICENSE](LICENSE) file for details.
